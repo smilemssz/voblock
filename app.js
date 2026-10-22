@@ -3,8 +3,8 @@ const COLORS=['#e3342f','#f59e0b','#facc15','#22a559','#2563eb','#7c3aed','#ec48
 const DEFS=[['1×1',1,1,3],['1×2',1,2,3],['2×2',2,2,3],['1×4',1,4,3],['2×4',2,4,3],['แผ่น 2×2',2,2,1],['แผ่น 2×4',2,4,1],['แผ่น 4×4',4,4,1],['แผ่นใหญ่ 8×8',8,8,1]];
 let curC=COLORS[0],sel=null;const P=new Map(),M=new Map();
 // ---------- three ----------
-const cv=(()=>{const r=new THREE.WebGLRenderer({antialias:true});r.setPixelRatio(Math.min(devicePixelRatio,2));r.shadowMap.enabled=true;document.body.prepend(r.domElement);return r})();
-const R=cv,S=new THREE.Scene(),cam=new THREE.PerspectiveCamera(45,1,.1,500);
+const R=(()=>{const r=new THREE.WebGLRenderer({antialias:true});r.setPixelRatio(Math.min(devicePixelRatio,2));r.shadowMap.enabled=true;document.body.prepend(r.domElement);return r})();
+const cv=R.domElement,S=new THREE.Scene(),cam=new THREE.PerspectiveCamera(45,1,.1,500);
 S.add(new THREE.HemisphereLight(0xffffff,0xbbbbbb,.95));
 const sun=new THREE.DirectionalLight(0xffffff,.8);sun.position.set(12,24,10);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);Object.assign(sun.shadow.camera,{left:-30,right:30,top:30,bottom:-30,far:80});S.add(sun);
 const gr=new THREE.Mesh(new THREE.PlaneGeometry(200,200),new THREE.ShadowMaterial({opacity:.15}));gr.rotation.x=-Math.PI/2;gr.receiveShadow=true;S.add(gr);
