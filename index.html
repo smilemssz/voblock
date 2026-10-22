@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="th"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>VOBLOCK</title>
+<link rel="stylesheet" href="style.css"></head><body>
+<div id="top"><div class="glass"><button class="tb" id="bName" style="font-weight:700;letter-spacing:1.5px">VOBLOCK</button></div>
+<div class="glass"><button class="tb" id="bInv">เชิญเพื่อน <span id="cnt"></span></button><button class="tb" id="bSave">บันทึก</button><button class="tb" id="bLoad">เปิดไฟล์</button></div></div>
+<button id="cap">＋ เพิ่มบล็อก</button>
+<div id="panel" class="glass"><div class="ph"><b>เลือกบล็อก</b><button id="pclose"><span class="w">—</span><span class="m">✕</span></button></div><div id="pcol"></div><div id="plist"></div></div>
+<div id="ring"><button class="glass" data-a="rot" title="หมุน (R)">↻</button><button class="glass" data-a="mov" title="ลาก">✥</button><button class="glass" data-a="tex" title="สี / รูปภาพ">◐</button><button class="glass" data-a="del" title="ลบ">✕</button></div>
+<div id="tex" class="glass"><div id="sw" style="padding:0 0 6px"></div><input type="color" id="colIn"><label>รูปภาพ<input type="file" id="imgIn" accept="image/*" hidden></label><button class="tb" id="clrImg">ล้างรูป</button><button class="tb" id="texX">ปิด</button></div>
+<div id="credit" class="glass"><div class="cb"><button id="crX" class="tb" style="float:right">✕</button>
+<h2>VOBLOCK</h2><p class="sub">สตูดิโอต่อบล็อก 3 มิติ บนเบราว์เซอร์</p>
+<p>VOBLOCK คือเกมสร้างสรรค์สำหรับต่อบล็อกสี่เหลี่ยมเป็นรูปทรงตามจินตนาการ ใช้เล่นได้ทั้งคอมพิวเตอร์ แท็บเล็ต และมือถือ ชวนเพื่อนเข้าห้องมาสร้างงานด้วยกัน และบันทึกผลงานเป็นไฟล์ JSON ได้</p>
+<h3>เครดิต</h3>
+<p><b>ไอเดียและแนวคิดเกม</b><br>เป็นของ <b>[ใส่ชื่อของคุณที่นี่]</b> ผู้คิดคอนเซ็ปต์ทั้งหมด เช่น เกมต่อบล็อก 3 มิติบนเบราว์เซอร์ ดีไซน์มินิมอล เมนูรอบชิ้นงาน แคปซูลเพิ่มบล็อก ห้องมัลติเพลเยอร์ และการบันทึกเป็นไฟล์ JSON</p>
+<p><b>การเขียนโค้ดทั้งหมด</b><br>เขียนโดย <b>Claude</b> (รุ่น Claude Sonnet 5.5) ซึ่งเป็นผู้ช่วย AI ที่พัฒนาโดย <b>Anthropic</b> โค้ดทุกบรรทัดในโปรเจกต์นี้ ทั้ง HTML, CSS และ JavaScript ถูกสร้างโดย Claude จากไอเดียและคำสั่งของเจ้าของไอเดีย</p>
+<p class="sm">สิ่งที่ Claude ทำ: ระบบฉาก 3 มิติและแสงเงา, การวางบล็อกบนตารางพร้อมการซ้อนชั้น, การลาก/หมุน/ลบ, เมนูรอบชิ้นงานและ outline ตอนเลือก, ตัวแก้สีและรูปภาพ, แผงเลือกบล็อกที่ปรับตามมือถือ/แท็บเล็ต/คอม, เมนูคลิกขวา, ระบบห้องผู้เล่นหลายคน, การบันทึกและโหลดไฟล์ JSON และหน้าเครดิตนี้</p>
+<p><b>ไลบรารีที่ใช้</b><br>three.js (MIT License) สำหรับกราฟิก 3 มิติ<br>PeerJS (MIT License) สำหรับการเชื่อมต่อผู้เล่นหลายคน<br>ฟอนต์: ฟอนต์ระบบของอุปกรณ์</p>
+<h3>ข้อควรทราบ</h3>
+<p class="sm">VOBLOCK เป็นผลงานอิสระที่ออกแบบขึ้นเอง รูปทรงบล็อกทั้งหมดสร้างด้วยโค้ดของเกมนี้ ไม่เกี่ยวข้อง ไม่ได้รับการสนับสนุน และไม่ได้รับการรับรองจากผู้ผลิตของเล่นตัวต่อรายใด ชื่อและเครื่องหมายการค้าอื่นที่อาจถูกกล่าวถึงเป็นสิทธิ์ของเจ้าของนั้น ๆ</p>
+<p class="sm">เวอร์ชัน 1.0</p></div></div>
+<div id="ctx" class="glass"></div><div id="toast"></div>
+<input type="file" id="fileIn" accept=".json,application/json" hidden>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.4/dist/peerjs.min.js"></script>
+<script src="app.js"></script></body></html>
